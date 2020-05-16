@@ -1,0 +1,15 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+  int length;
+  cin >> length;
+  int random[length];
+  for (int i = 0; i < length; i++) {
+    random[i] = rand()%100;
+    if (random[i] %2 == 0) {
+      cout << random[i] << " ";
+    }
+  }
+  cout << endl;
+}
