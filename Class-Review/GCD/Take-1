@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main() {
+  int gcd;
+  int a; 
+  int b;
+  cin >> a >> b;
+  int smaller = (b < a) ? b : a;
+  for (int i = smaller; i > 0; i--) {
+    if (a % i == 0 && b % i == 0) {
+      cout << i << endl;
+      break;
+    }
+  }
+}
