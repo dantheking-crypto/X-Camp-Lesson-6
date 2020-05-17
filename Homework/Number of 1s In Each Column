@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main() {
+  int row, col;
+  cin >> row >> col;
+  int matrix[row][col];
+  for (int i = 0; i < row; i++) {
+    for (int j = 0; j < col; j++) {
+      cin >> matrix[i][j];
+    }
+  }
+  int sums[col];
+  for (int i = 0; i < col; i++) {
+    sums[i] = 0;
+    for (int j = 0; j < row; j++) {
+      sums[i] += matrix[j][i];
+    }
+  }
+  for (int i = 0; i < col; i++) {
+    cout << sums[i] << endl;
+  }
+  return 0;
+}
