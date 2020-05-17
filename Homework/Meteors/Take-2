@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+  int meteors = 0, queries = 0;
+  cin >> meteors >> queries;
+  int times[meteors];
+  for (int i = 0; i < meteors; i++) {
+    cin >> times[i];
+  }
+  int range[queries];
+  for (int i = 0; i < queries; i++) {
+  int l, r;
+  cin >> l >> r;
+  int lower = 0, upper = 0;
+  for (int i = 0; i < meteors; i++) {
+    if (times[i] >= l) {
+      lower = i;
+      break;
+    }
+  }
+  for (int i = meteors - 1; i >= 0; i--) {
+    if (times[i] <= r) {
+      upper = i;
+      break;
+    }
+  }
+  range[i] = abs(upper - lower) + 1;
+}
+for (int i = 0; i < queries; i++) {
+  cout << range[i] << endl;
+}
+}
