@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main() {
+  int numbers, queries;
+  cin >> numbers;
+  long long Numbers[numbers];
+  for (int i = 0; i < numbers; i++) {
+    cin >> Numbers[i];
+  }
+  cin >> queries;
+  long long results[queries];
+  for (int i = 0; i < queries; i++) {
+     int l, r;
+     cin >> l >> r;
+     long long sum = 0;
+     for (int i = l - 1; i < r; i++) {
+       if (i > numbers - 1) break;
+       sum += Numbers[i];
+     }
+     results[i] = sum;
+  }
+  for (int i = 0; i < queries; i++) {
+    cout << results[i] << endl;
+  }
+  return 0;
+}
