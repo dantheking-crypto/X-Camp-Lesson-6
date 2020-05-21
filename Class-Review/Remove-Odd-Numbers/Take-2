@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+int main() {
+  int length = 0; 
+  int length2 = 0;
+  cin >> length;
+  int random[length];
+  for (int i = 0; i < length; i++) {
+    random[i] = rand()%100;
+    if (random[i] % 2 == 0) {
+      length2++;
+    }
+  }
+  int even[length2];
+  int index = 0;
+  for (int i = 0; i < length; i++) {
+    if (random[i] % 2 == 0) {
+      even[index] = random[i];
+      index++;
+    }
+  }
+  for (int i = 0; i < length2; i++) {
+    cout << even[i] << " ";
+  }
+  cout << endl;
+}
